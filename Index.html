@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Button</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    #web-buttons-id2f2sc a {
+        display: block;
+        color: transparent;
+    }
+    #web-buttons-id2f2sc a:hover {
+        background-position: left bottom;
+    }
+    a#web-buttons-id2f2sca {
+        display: none;
+    }
+</style>
+
+<table id="web-buttons-id2f2sc" width=0 cellpadding=0 cellspacing=0 border=0>
+    <tr>
+        <td style="padding-right:0px" title="Staff Profile List">
+            <a href="#" title="Staff Profile List" style="background-image:url(Index-files/bt2f2sc.png);width:200px;height:60px;display:block;"
+               onclick="showPage('profile')"><br/></a>
+        </td>
+        <td style="padding-right:0px" title="Requests">
+            <a href="#" title="Requests" style="background-image:url(Index-files/bttf2sc.png);width:200px;height:60px;display:block;"
+               onclick="showPage('requests')"><br/></a>
+        </td>
+        <td style="padding-right:0px" title="Home">
+            <a href="#" title="Home" style="background-image:url(Index-files/btpf2sc.png);width:200px;height:60px;display:block;"
+               onclick="showPage('home')"><br/></a>
+        </td>
+        <td style="padding-right:0px" title="Website Fake Or Not?">
+            <a href="#" title="Website Fake Or Not?" style="background-image:url(Index-files/btof2sc.png);width:200px;height:60px;display:block;"
+            onclick="showPage('WEBFON')"><br/></a>
+        </td>
+        <td style="padding-right:0px" title="Fun Stuffs!">
+            <a href="#" title="Fun Stuffs!" style="background-image:url(Index-files/btwf2sc.png);width:200px;height:60px;display:block;"
+               onclick="showPage('fun')"><br/></a>
+        </td>
+    </tr>
+</table>
+<a id="web-buttons-id2f2sca" href="http://freebuttons.org">Image Of A Button by FreeButtons.org v2.0</a>
+
+<!-- Add this JavaScript code at the bottom of your HTML -->
+<script>
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('.content');
+        pages.forEach(page => {
+            page.style.display = 'none'; // Hide all pages
+        });
+        document.getElementById(pageId).style.display = 'block'; // Show the selected page
+    }
+</script>
+<div id="home" class="content">
+    <h1>Welcome to Home Page</h1>
+    <p>This is the home page content.</p>
+</div>
+
+<div id="profile" class="content" style="display: none;">
+    <h1>Staff Profile List</h1>
+    <p>Details of staff members will appear here.</p>
+</div>
+
+<div id="requests" class="content" style="display: none;">
+    <h1>Requests Page</h1>
+    <p>Request details will be displayed here.</p>
+</div>
+
+<div id="fun" class="content" style="display: none;">
+    <h1>Fun Stuffs!</h1>
+    <p>Enjoy some Games!<br>Reload Page To Stop Game</p>
+    <div class="game-container">
+        <button class="game-button" onclick="startGame()">Start Connect The Dots Game</button>
+        <div id="game-container" style="display: none;">
+          <script src="https://cdn.htmlgames.com/embed.js?game=ConnectTheDots&amp;bgcolor=white"></script>
+        </div>
+      </div>
+    
+      <script>
+        function startGame() {
+          document.getElementById('game-container').style.display = 'block';
+          document.querySelector('.game-button').style.display = 'none'; // Hide button after click
+        }
+      </script>
+</div>
+
+<div id="WEBFON" class="content" style="display: none;">
+    <h1>Website Fake Or Not?</h1>
+    <p>This Test Checks If This Website Is fake or not<br>NOT WORKING</p>
+    <button>Check</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
